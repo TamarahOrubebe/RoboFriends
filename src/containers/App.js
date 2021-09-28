@@ -1,11 +1,8 @@
-import React, {useEffect} from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import CardList from '../components/CardList';
-import SearchBox from '../components/SearchBox';
-import Scroll from '../components/Scroll'
-import ErrorBoundary from '../components/ErrorBoundary';
 import { connect } from "react-redux";
 import { changeSearchField, getRobots } from '../actions';
+import MainPage from '../components/MainPage';
 
 
 
@@ -27,38 +24,12 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 
-function App(props) {
+class App extends Component {
 
- 
- 
-  const { searchfield, handleSearch, robots, handleFetch} = props;
+  render() {
+    return <MainPage {...this.props} />;
+  }
   
-
-  useEffect(() => {
-
-    handleFetch();
-    
-  }, [handleFetch])
-
-  
-  
-
-  const filteredRobots = robots.filter(robot => {
-    return robot.name.toLowerCase().includes(searchfield.toLowerCase());
-  });
-
-
-  return (
-		<div className="tc">
-			<h1 className="light-green f1">ROBOTIC FRIENDS</h1>
-			<SearchBox onSearch={handleSearch} />
-      <Scroll>
-        <ErrorBoundary>
-				  <CardList robots={filteredRobots} />
-        </ErrorBoundary>
-			</Scroll>
-		</div>
-	);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

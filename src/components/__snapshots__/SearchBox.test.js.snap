@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a SearchBox component 1`] = `
+<div>
+  <input
+    aria-label="searcbox"
+    className="pa3 ba b--green bg-lightest-blue"
+    name="searchbox"
+    type="search"
+  />
+</div>
+`;

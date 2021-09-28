@@ -5,6 +5,8 @@ import {
     GET_ROBOTS_FAILED
 } from "./constants"
 
+import { apiCall } from "./Api/ApiCall";
+
 
 export const changeSearchField = (text) => ({
     type: CHANGE_SEARCH_FIELD,
@@ -15,8 +17,8 @@ export const changeSearchField = (text) => ({
 export const getRobots = () => (dispatch) => {
 
     dispatch({ type: GET_ROBOTS_PENDING });
-    fetch("https://jsonplaceholder.typicode.com/users")
-        .then(response => response.json())
+    
+     apiCall("https://jsonplaceholder.typicode.com/users")
         .then(robots => dispatch({ type: GET_ROBOTS_SUCCESS, payload: robots }))
         .then(error => dispatch({ type: GET_ROBOTS_FAILED, payload: error }));
     
