@@ -1,9 +1,25 @@
 import React, { Component } from 'react';
 
 
+interface IProps{
 
-class ErrorBoundary extends Component {
-    constructor(props) {
+}
+
+interface MyState{
+    hasError: boolean
+}
+
+
+
+class ErrorBoundary extends Component<IProps, MyState> {
+
+
+    state: MyState = {
+        hasError: false
+    }
+
+    
+    constructor(props: IProps) {
         super(props);
 
         this.state = {
@@ -14,7 +30,8 @@ class ErrorBoundary extends Component {
 
 
 
-    componentDidCatch(error, info) {
+    componentDidCatch(error: object, info: object) {
+
         this.setState({ hasError: true });
     }
 

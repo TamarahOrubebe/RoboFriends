@@ -1,7 +1,11 @@
 import React from 'react';
 
 
-const SearchBox = ({onSearch}) => {
+interface IProps{
+    onSearch: VoidFunction
+}
+
+const SearchBox = ({onSearch}: IProps) => {
 
     return (
         <div >

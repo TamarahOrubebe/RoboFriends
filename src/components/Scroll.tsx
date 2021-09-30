@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
+interface IProps{
+    children: ReactNode
+}
 
-
-
-const Scroll = (props) => {
+const Scroll = (props: IProps) => {
 
 
     return (

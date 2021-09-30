@@ -1,8 +1,13 @@
 import React from 'react';
 import Card from './Card';
 
+import { IRobot } from './MainPage';
 
-const CardList = ({robots}) => {
+interface IProp {
+    robots: Array<IRobot>
+}
+
+const CardList = ({ robots }: IProp) => {
     
 
     return (

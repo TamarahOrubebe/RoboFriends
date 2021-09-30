@@ -1,10 +1,10 @@
 import React from 'react';
+import { IRobot } from './MainPage';
 
 
+const Card = ({ name, id, email } : IRobot) => {
 
-const Card = (props) => {
-
-    const { name, email, id } = props;
+     
 
     return (
         <div className="bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5 tc">

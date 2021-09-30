@@ -6,18 +6,36 @@ import Scroll from "./Scroll";
 import ErrorBoundary from "./ErrorBoundary";
 import CounterButton from "./CounterButton";
 
+export interface IRobot{
+    name: string,
+    id: number,
+    email: string
+}
+
+interface IProps{
+    robots: Array<IRobot>,
+    searchfield: string,
+    handleFetch: VoidFunction,
+    handleSearch: VoidFunction,
+    isPending: boolean
+}
 
 
-class MainPage extends Component {
+interface IState{
+
+}
 
 
-    componentDidMount() {
+class MainPage extends Component<IProps, IState> {
+
+   
+    componentDidMount(): void {
         this.props.handleFetch();
     }
 
   
 
-    filterRobots = () => {
+    filterRobots = (): Array<IRobot> => {
         return this.props.robots.filter((robot) => {
             return robot.name.toLowerCase().includes(this.props.searchfield.toLowerCase());
         });
@@ -34,9 +52,9 @@ class MainPage extends Component {
         return (
             <div className="tc">
                 <h1 className="light-green f1">ROBOTIC FRIENDS</h1>
-                <CounterButton />
+                <CounterButton color="red" />
                 <SearchBox onSearch={handleSearch} />
-                <Scroll id="scroll">
+                <Scroll>
 
                     {isPending? <h1>Loading</h1> : <ErrorBoundary>
                         <CardList robots={this.filterRobots()} />

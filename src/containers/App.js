@@ -6,6 +6,8 @@ import MainPage from '../components/MainPage';
 
 
 
+
+
 const mapStateToProps = (state) => {
 	return {
     searchfield: state.searchRobots.searchfield,
@@ -22,6 +24,7 @@ const mapDispatchToProps = (dispatch) => {
     handleFetch: () => dispatch(getRobots())
 	};
 };
+
 
 
 class App extends Component {
