@@ -5,20 +5,17 @@ import CardList from './CardList';
 
 	
 let wrapper;
-	
-beforeEach(() => {
+
+
+
+it('renders MainPage without crashing', () => {
+
 	const mockProps = {
 		handleFetch: jest.fn(),
 		robots: [],
 		searchfield: "",
 		isPending: false,
 	}
-
-	wrapper = shallow(<MainPage {...mockProps} />);
-});
-
-
-it('renders MainPage without crashing', () => {
 
 	wrapper = shallow(<MainPage {...mockProps} />);
 	expect(wrapper).toMatchSnapshot();
