@@ -10,15 +10,15 @@ let wrapper;
 
 it('renders MainPage without crashing', () => {
 
-	// const mockProps = {
-	// 	handleFetch: jest.fn(),
-	// 	robots: [],
-	// 	searchfield: "",
-	// 	isPending: false,
-	// }
+	const mockProps = {
+		handleFetch: jest.fn(),
+		robots: [],
+		searchfield: "",
+		isPending: false,
+	}
 
 	
-	expect(shallow(<MainPage {...mockProps}/>)).toMatchSnapshot();
+	expect(shallow(<MainPage />)).toMatchSnapshot();
 })
 
 
