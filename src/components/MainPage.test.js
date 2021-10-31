@@ -23,33 +23,33 @@ it('renders MainPage without crashing', () => {
 
 
 
-it('it filters robots correctly', () => {
+// it('it filters robots correctly', () => {
 
-	const mockProps2 = {
-		handleFetch: jest.fn(),
-		robots: [
-			{
-				id: 1,
-				name: "John",
-				email: "John@gmail.com",
-			},
-		],
-		searchfield: "john",
-		isPending: false,
-	};
+// 	const mockProps2 = {
+// 		handleFetch: jest.fn(),
+// 		robots: [
+// 			{
+// 				id: 1,
+// 				name: "John",
+// 				email: "John@gmail.com",
+// 			},
+// 		],
+// 		searchfield: "john",
+// 		isPending: false,
+// 	};
 
-	const wrapper2 = shallow(<MainPage {...mockProps2} />);
+// 	const wrapper2 = shallow(<MainPage {...mockProps2} />);
 
-	expect(wrapper2.instance().filterRobots()).toEqual([
-		{
-			id: 1,
-			name: "John",
-			email: "John@gmail.com"
-		}
-	]);
+// 	expect(wrapper2.instance().filterRobots()).toEqual([
+// 		{
+// 			id: 1,
+// 			name: "John",
+// 			email: "John@gmail.com"
+// 		}
+// 	]);
 
 	
-})
+// })
 
 
 
