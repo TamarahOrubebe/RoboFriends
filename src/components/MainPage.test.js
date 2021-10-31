@@ -17,8 +17,8 @@ it('renders MainPage without crashing', () => {
 		isPending: false,
 	}
 
-	wrapper = shallow(<MainPage {...mockProps} />);
-	expect(wrapper).toMatchSnapshot();
+	
+	expect(shallow(<MainPage {...mockProps}/>)).toMatchSnapshot();
 })
 
 
