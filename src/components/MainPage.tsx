@@ -35,7 +35,7 @@ class MainPage extends Component<IProps, IState> {
 
   
 
-    filterRobots = (): Array<IRobot> => {
+    filterRobots = () => {
         return this.props.robots.filter((robot) => {
             return robot.name.toLowerCase().includes(this.props.searchfield.toLowerCase());
         });
