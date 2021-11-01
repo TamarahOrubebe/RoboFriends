@@ -47,7 +47,7 @@ jobs:
       - run: echo "Hellooooo"     
 workflows:
   version: 2.1
-  buuild_test_and_lint:
+  build_test_and_lint:
     jobs:
       - build
       - hithere
